@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TweekImpoting - Produtos</title>
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    
+    <header class="main-header">
+        <div class="left-header">
+          <div class="logo">
+            <a href='index.html'>
+                <img src="img/logo-site.png" alt="TweekImpoting" class="logo-image">
+            </a>
+          </div>  
+          <nav class="nav-bar">
+            <ul class="nav-links">
+<div class="selector-buttons">
+  <a href="produtos.html"><i class="fas fa-box"></i>🛒 Produtos</a>
+  <a href="lojas.html"><i class="fas fa-store"></i>🏪 Lojas</a>
+</div>
+            </ul>
+          </nav>
+        </div>
+      
+        <div class="social-icons">
+<a href="https://www.tiktok.com/@tweekimporting?lang=pt-BR" target="_blank">
+  <img src="img/logottk.png" alt="TikTok" style="height: 35px;">
+</a>
+          <a href="https://hoobuy.com/?utm_source=website&utm_medium=ambassador&utm_campaign=linksharing&inviteCode=mXY4a9VR" target="_blank" class="cssbuy-link">
+            <img src="img/logo-css-branca.png" class="logo-cssbuy" 
+            onmouseover="this.src='img/logo-css-azul.png'" 
+            onmouseout="this.src='img/logo-css-branca.png'" 
+            alt="CSSBuy">
+          </a>               
+<a href="https://discord.gg/NDq7ncq55H" target="_blank">
+  <img src="img/discord-logo-0.png" alt="Discord" style="height: 48px;">
+</a>
+        </div>
+        <div class="header-line"></div>
+      </header>
+          <style>
+        .promo-banner {
+            background: linear-gradient(90deg, #7338A0, #924DBF);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 15px;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            /* Não aplica animação aqui */
+        }
+
+        .promo-text {
+            display: inline-block; /* importante para a transformação funcionar bem */
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); } /* um pouco maior pra ficar mais visível */
+            100% { transform: scale(1); }
+        }
+
+        .promo-banner a {
+            text-decoration: none;
+            color: #FFFFFF;
+            font-weight: bold;
+            transition: color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            margin-left: 8px;
+        }
+
+        .promo-banner a:hover {
+            color: #4A2574;
+        }
+    </style>
+</head>
+<body>
+    <div class="promo-banner">
+        <a href="https://hoobuy.com?utm_source=website&utm_medium=ambassador&utm_campaign=linksharing&inviteCode=mXY4a9VR" target="_blank" rel="noopener noreferrer">
+        <span class="promo-text">Registre-se na HooBuy (Cupons e Vantagens)!</span>
+        </a>
+    </div>
+<div id="produtos-container"></div>
+<script src="script-produtos.js"></script>
+</body>
+</html>
+      <div class="category-nav">
+        <div class="category-row">
+            <a href="#tenis" class="category-button">
+                <img src="img/tenis-botao.png" alt="Ícone Tênis" class="category-icon">
+                <span>Tênis</span>
+            </a>
+            <a href="#camisetas" class="category-button">
+                <img src="img/camiseta-botao.png" alt="Ícone Camiseta" class="category-icon">
+                <span>Camisetas</span>
+            </a>
+            <a href="#casaco" class="category-button">
+                <img src="img/casaco-botao.png" alt="Ícone Casaco" class="category-icon">
+                <span>Casaco</span>
+            </a>
+        </div>
+        <div class="category-row">
+            <a href="#acessorios" class="category-button">
+                <img src="img/acessorio-botao.png" alt="Ícone Acessórios" class="category-icon">
+                <span>Acessórios</span>
+            </a>
+            <a href="#calca" class="category-button">
+                <img src="img/calca-botao.png" alt="Ícone Calça" class="category-icon">
+                <span>Calça</span>
+            </a>
+            <a href="#bermuda" class="category-button">
+                <img src="img/bermuda-botao.png" alt="Ícone Bermuda" class="category-icon">
+                <span>Bermuda</span>
+            </a>
+        </div>
+    </div>
+    <div class="search-container">
+ <input type="text" id="searchInput" class="search-input" placeholder="Buscar produto...">
+<img src="img/lupa.png" alt="Buscar" class="search-icon" style="height: 25px;">
+    </div>
+    <div id="no-results-message" style="display:none; text-align:center; color:#fff; font-size:1.2rem; margin-top:20px;">
+  Nenhum produto encontrado 😢
+</div>
+
+</main>
+        </div>
+</header><main><section id="tenis">
+<h2><span class="section-icon">👟</span> Tênis</h2>
+<div class="product-grid">
+<a class="product-card" data-product-id="tenis-1" href="https://hoobuy.cc/A8aBnYeR" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Tênis 1" src="img/tenis/travis-jordan1.png"/>
+<div class="product-name">Jordan 1 Travis Scott PK 4.0<br/>(Várias cores)</div>
+<p class="price">¥380</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1859145041278242818', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="tenis-2" href="https://hoobuy.cc/PR3ZPaO8" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Tênis 2" src="img/tenis/dunk-vt.png"/>
+<div class="product-name">Nike Dunk VT<br/>(Várias cores)</div>
+<p class="price">¥139</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1916836422709460993', '_blank');">
+                        QC
+                    </div>
+                    </a>
+<a class="product-card" data-product-id="tenis-2" href="https://hoobuy.cc/Z8MJDQpR" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Tênis 2" src="img/tenis/LA Dodgers.png"/>
+<div class="product-name">Nike Dunk LA Dodgers<br/></div>
+<p class="price">¥220</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1916836422709460993', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="tenis-3" href="https://hoobuy.cc/VRNx3GGE" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Tênis 3" src="img/tenis/airforce-xp.png"/>
+<div class="product-name">Air Force 1 XP<br/>(Várias cores)</div>
+<p class="price">¥200</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://finds.ly/product/taobao/819233854636', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="tenis-4" href="https://hoobuy.cc/AXnbnLZX" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Tênis 4" src="img/tenis/dunk-m.png"/>
+<div class="product-name">Nike Dunk M<br/>(Várias cores)</div>
+<p class="price">¥290</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1872553131549757442', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="tenis-5" href="https://hoobuy.cc/P8g9nm4X" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Tênis 5" src="img/tenis/campus-goat.png"/>
+<div class="product-name">Adidas Campus<br/>(Várias cores)</div>
+<p class="price">¥170</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1872553120199970817', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="tenis-6" href="https://hoobuy.cc/lRJp3koE" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Tênis 6" src="img/tenis/vans-knu.png"/>
+<div class="product-name">Vans Knu Skool<br/>(Várias cores)</div>
+<p class="price">¥160</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1916838124955156482', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="tenis-7" href="https://hoobuy.cc/zXvrnmvX" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Tênis 7" src="img/tenis/jordan-dt.png"/>
+<div class="product-name">Jordan 1 low DT<br/>(Várias cores)</div>
+<p class="price">¥190</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1875814543747289090', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="tenis-8" href="https://hoobuy.cc/lXQxvj5R" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Tênis 8" src="img/tenis/b30-a.png"/>
+<div class="product-name">Dior B30 A+<br/>(Várias cores)</div>
+<p class="price">¥390</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1916838714733019137', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="tenis-8" href="https://hoobuy.cc/YRqGxkzE" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Tênis 8" src="img/tenis/9060.png"/>
+<div class="product-name">New Balance 9060 M<br/>(Várias cores)</div>
+<p class="price">¥180</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1903941848025632770', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="tenis-9" href="https://hoobuy.cc/LXyAOx6X" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Tênis 8" src="img/tenis/kobe.png"/>
+<div class="product-name">Nike Kobe 6<br/>(Várias cores)</div>
+<p class="price">¥370</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1917040250121666561', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="tenis-10" href="https://hoobuy.cc/0R74gM0X" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Tênis 8" src="img/tenis/asics-nyc.png"/>
+<div class="product-name">Asics Gel-NYC TG<br/>(Várias cores)</div>
+<p class="price">¥200</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1890822842645319681', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="tenis-11" href="https://hoobuy.cc/j843wDYE" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Tênis 8" src="img/tenis/dn.png"/>
+<div class="product-name">Air Max DN LW<br/>(Várias cores)</div>
+<p class="price">¥170</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1917041672976384002', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="tenis-12" href="https://hoobuy.cc/K8W0vPDR" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Tênis 8" src="img/tenis/kayano.png"/>
+<div class="product-name">Asics Kayano 14 TG<br/>(Várias cores)</div>
+<p class="price">¥220</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1917072408525717505', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="tenis-13" href="https://hoobuy.cc/PR3ZL9n8" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Tênis 8" src="img/tenis/jordan4-gx.png"/>
+<div class="product-name">Jordan 4 GX<br/>(Várias cores)</div>
+<p class="price">¥420</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1876177070326910978', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="tenis-14" href="https://hoobuy.cc/4RrM7wP8" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Tênis 8" src="img/tenis/travistg.png"/>
+<div class="product-name">Jordan 1 Travis TS<br/>(Várias cores)</div>
+<p class="price">¥250</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1917075177412280322', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="tenis-15" href="https://hoobuy.cc/yEkY0qxR" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Tênis 8" src="img/tenis/vomero.png"/>
+<div class="product-name">Nike Vomero 5 Z<br/>(Várias cores)</div>
+<p class="price">¥200</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1875968962166099969', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="tenis-18" href="https://hoobuy.cc/w8o7Lqg8" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Tênis 8" src="img/tenis/balenciaga-3xl.png"/>
+<div class="product-name">Balenciaga 3XL XA<br/>(Várias cores)</div>
+<p class="price">¥310</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1917082703537160193', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="tenis-19" href="https://hoobuy.cc/AXnbmqJX" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Tênis 8" src="img/tenis/alexander.png"/>
+<div class="product-name">Alexander McQueen</div>
+<p class="price">¥360</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://finds.ly/product/taobao/829229215518', '_blank');">
+                        QC
+                    </div>
+</a>
+</div>
+</section><section id="camisetas">
+<h2><span class="section-icon">👕</span> Camisetas</h2>
+<div class="product-grid">
+<a class="product-card" data-product-id="camiseta-1" href="https://hoobuy.cc/P8g9Pq1X" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Camiseta 1" src="img/camisetas/camiseta-ralph.png"/>
+<div class="product-name">Ralph Lauren<br/>(Várias cores)</div>
+<p class="price">¥98</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1891092289574506497', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="camiseta-2" href="https://hoobuy.cc/zXvr6P2X" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Camiseta 2" src="img/camisetas/camiseta-cdg.png"/>
+<div class="product-name">CDG PLAY<br/>(Várias cores)</div>
+<p class="price">¥120</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1858282862693945346', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="camiseta-5" href="https://hoobuy.cc/lXQxgJNR" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Camiseta 5" src="img/camisetas/camiseta-hellstar.png"/>
+<div class="product-name">Hellstar<br/>(Várias cores)</div>
+<p class="price">¥85</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1858282862693945346', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="camiseta-5" href="https://hoobuy.cc/LRGm1WNE" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Camiseta 5" src="img/camisetas/lisa.png"/>
+<div class="product-name">Camiseta Lisa<br/>(Várias cores)</div>
+<p class="price">¥13.5</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://findqc.com/detail/T1688/756785828513', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="camiseta-4" href="https://hoobuy.cc/LRGmgDNE" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Camiseta 4" src="img/camisetas/camiseta-represent.png"/>
+<div class="product-name">Represent<br/>(Várias cores)</div>
+<p class="price">¥50</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1905678458375213058', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="camiseta-6" href="https://hoobuy.cc/Z8MJgWpR" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Camiseta 6" src="img/camisetas/camiseta-denim.png"/>
+<div class="product-name">Denim Tears<br/>(Várias cores)</div>
+<p class="price">¥98</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1906522627507326978', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="camiseta-7" href="https://hoobuy.cc/2X6q7WdR" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Camiseta 7" src="img/camisetas/camiseta-stussy.png"/>
+<div class="product-name">Jersey Stussy</div>
+<p class="price">¥118</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1853614346284367874', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="camiseta-8" href="https://hoobuy.cc/7Ejp2W6R" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Camiseta 8" src="img/camisetas/camiseta-aime.png"/>
+<div class="product-name">Aime Leon Dore<br/>(Várias cores)</div>
+<p class="price">¥60</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1916839507229982721', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="camiseta-9" href="https://hoobuy.cc/nE5qxWdE" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Camiseta 8" src="img/camisetas/camiseta-insider.png"/>
+<div class="product-name">Camiseta Tipo Insider<br/>(Várias cores)</div>
+<p class="price">¥40</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://finds.ly/product/ali1688/678540275694', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="camiseta-10" href="https://hoobuy.cc/vXOxgWxE" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Camiseta 8" src="img/camisetas/polo-chief.png"/>
+<div class="product-name">Polo Ralph Lauren Chief Keef<br/>(Várias cores)</div>
+<p class="price">¥60</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://finds.ly/product/ali1688/836924974974', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="camiseta-11" href="https://hoobuy.cc/QX1vyWVE" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Camiseta 8" src="img/camisetas/camiseta-gymshark.png"/>
+<div class="product-name">Camiseta GymShark<br/>(Várias cores)</div>
+<p class="price">¥39</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://finds.ly/product/taobao/611493947097', '_blank');">
+                        QC
+                    </div>
+</a>
+</div>
+</section><section id="casaco">
+<h2><span class="section-icon">🧥</span> Casaco</h2>
+<div class="product-grid">
+<a class="product-card" data-product-id="casaco-1" href="https://hoobuy.cc/38V0GW1X" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Casaco 1" src="img/casaco/casaco-nocta.png"/>
+<div class="product-name">Nike x Nocta <br/> (Várias cores)</div>
+<p class="price">¥105</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1853708874416717825', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="casaco-3" href="https://hoobuy.cc/6XKkgWOX" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Casaco 3" src="img/casaco/casaco-margiela.png"/>
+<div class="product-name">Supreme x Maison Margiela<br/>(Todas as cores)</div>
+<p class="price">¥300</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1900256360303529986', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="casaco-5" href="https://hoobuy.cc/lXQxgJyR" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Casaco 5" src="img/casaco/moletom-cp.png"/>
+<div class="product-name">CP Company<br/>(Várias Cores)</div>
+<p class="price">¥150</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1899345418975809537', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="casaco-6" href="https://hoobuy.cc/K8lYqWxR" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Casaco 6" src="img/casaco/casaco-corteizsup.png"/>
+<div class="product-name">Supreme x Corteiz</div>
+<p class="price">¥209</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1879022833427910657', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="casaco-7" href="https://hoobuy.cc/Z8MJgWdR" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Casaco 7" src="img/casaco/casaco-tnf.png"/>
+<div class="product-name">Jaqueta The North Face<br/>(Várias cores)</div>
+<p class="price">¥159</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1916922777087033346', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="casaco-8" href="https://hoobuy.cc/2X6q7WGR" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Casaco 8" src="img/casaco/casaco-puffer-tnf.png"/>
+<div class="product-name">Puffer The North Face<br/>(Várias cores)</div>
+<p class="price">¥199</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1903899645685370881', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="casaco-9" href="https://hoobuy.cc/7Ejp2WWR" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Casaco 8" src="img/casaco/tech-fleece.png"/>
+<div class="product-name">Casaco Tech Fleece<br/>(Várias cores)</div>
+<p class="price">¥95</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://finds.ly/product/ali1688/788710986503', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="casaco-10" href="https://hoobuy.cc/nE5qxW1E" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Casaco 8" src="img/casaco/casaco-chrome.png"/>
+<div class="product-name">Moletom Chrome Hearts<br/>(Vários Modelos)</div>
+<p class="price">¥108</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://finds.ly/product/ali1688/854990248735', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="casaco-11" href="https://hoobuy.cc/vXOxgWDE" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Casaco 8" src="img/casaco/casaco-rl.png"/>
+<div class="product-name">Moletom Ralph Lauren<br/>(Vários Modelos)</div>
+<p class="price">¥149</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1857332966524555266', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="casaco-12" href="https://hoobuy.cc/NXbZ9VlX" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Casaco 8" src="img/casaco/moletom-nike1.png"/>
+<div class="product-name">Moletom  Nike<br/>(Preto e Cinza)</div>
+<p class="price">¥79</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1853614266580008961', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="casaco-12" href="https://hoobuy.cc/QX1vyWBE" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Casaco 8" src="img/casaco/corteiz-brazil.png"/>
+<div class="product-name">Casaco Corteiz Brasil <br/>(Todas as Cores)</div>
+<p class="price">¥260</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://finds.ly/product/taobao/865517398565', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="casaco-13" href="https://hoobuy.cc/AXnbdpJX" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Casaco 8" src="img/casaco/represent.png"/>
+<div class="product-name">Moletom Represent <br/>(Varios Modelos)</div>
+<p class="price">¥70</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://findqc.com/detail/T1688/743186206418', '_blank');">
+                        QC
+                    </div>
+                </a>
+
+</a>
+</div>
+</section><section id="acessorios">
+<h2><span class="section-icon">🕶️</span> Acessórios</h2>
+<div class="product-grid">
+<a class="product-card" data-product-id="acessorio-1" href="https://hoobuy.cc/38V0GWDX" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Acessório 1" src="img/acessorios/oculos-chrome.png"/>
+<div class="product-name">Óculos Chrome Hearts<br/>(Várias cores)</div>
+<p class="price">¥13</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1859144907173761025', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="acessorio-3" href="https://hoobuy.cc/6XKkgWaX" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Acessório 3" src="img/acessorios/mochila-nike.png"/>
+<div class="product-name">Mochila Nike Elite<br/>(Várias cores)</div>
+<p class="price">¥52</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1853614368111525889', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="acessorio-4" href="https://hoobuy.cc/K8lYqWKR" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Acessório 4" src="img/acessorios/bone-sup.png"/>
+<div class="product-name">Boné Supreme "S"<br/>(Várias cores)</div>
+<p class="price">¥99</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1859507102332063745', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="acessorio-5" href="https://hoobuy.cc/PEZM5GoX" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Acessório 5" src="img/acessorios/meia-nike.png"/>
+<div class="product-name">Meia Nike</div>
+<p class="price">¥5</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1853708864526548993', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="acessorio-6" href="https://hoobuy.cc/BE9BgQJ8" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Acessório 6" src="img/acessorios/oculos-oakley.png"/>
+<div class="product-name">Óculos Oakley Plantaris<br/>(Várias cores)</div>
+<p class="price">¥85</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1875452143852425219', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="acessorio-7" href="https://hoobuy.cc/6EDkgloX" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Acessório 7" src="img/acessorios/cueca-sup.png"/>
+<div class="product-name">Cueca Supreme<br/>(Vários modelos)</div>
+<p class="price">¥35</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1903202379697852417', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="acessorio-9" href="https://hoobuy.cc/MXzZb0mX" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Acessório 8" src="img/acessorios/porta-goyard.png"/>
+<div class="product-name">Porta-Cartão Goyard<br/>(Várias cores)</div>
+<p class="price">¥35</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://findqc.com/detail/TB/675330231400?frm=1', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="acessorio-10" href="https://hoobuy.cc/w8o7LO48" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Acessório 8" src="img/acessorios/capinha CH.png"/>
+<div class="product-name">Capinha Chrome Hearts<br/>(Iphone)</div>
+<p class="price">¥20</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://findqc.com/detail/TB/844358337655?frm=1', '_blank');">
+                        QC
+                    </div>                    
+</a>
+</div>
+</section><section id="calca">
+<h2><span class="section-icon">👖</span> Calça</h2>
+<div class="product-grid">
+<a class="product-card" data-product-id="calca-1" href="https://hoobuy.cc/NRdDzlyR" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Calça 1" src="img/cal%c3%a7as/calca-carhartt.png"/>
+<div class="product-name">Calça Carhartt<br/>(Várias cores)</div>
+<p class="price">¥160</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1869291649634504706', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="calca-2" href="https://hoobuy.cc/vXpQwWnE" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Calça 2" src="img/cal%c3%a7as/calca-flare.png"/>
+<div class="product-name">Calça Flare Zara<br/>(Várias cores)</div>
+<p class="price">¥115</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1904571362338508802', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="calca-3" href="https://hoobuy.cc/JEPngWgR" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Calça 3" src="img/cal%c3%a7as/cal%c3%a7a-moletom.png"/>
+<div class="product-name">Calça Moletom Reta<br/>(Várias cores)</div>
+<p class="price">¥60</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1853614346083041282', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="calca-4" href="https://hoobuy.cc/6Re9dZbR" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Calça 4" src="img/cal%c3%a7as/cal%c3%a7a-chrome.png"/>
+<div class="product-name">Calça Chrome Hearts<br/>(Várias cores)</div>
+<p class="price">¥115</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1881010312951468033', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="calca-5" href="https://hoobuy.cc/mXYGjQd8" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Calça 5" src="img/cal%c3%a7as/cal%c3%a7a-moletombaggy.png"/>
+<div class="product-name">Calça Moletom Baggy</div>
+<p class="price">¥200</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1916949584498704386', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="calca-6" href="https://hoobuy.cc/082zmWN8" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Calça 6" src="img/cal%c3%a7as/cal%c3%a7a-denim.png"/>
+<div class="product-name">Calça Denim Tears Moletom<br/>(Várias cores)</div>
+<p class="price">¥178</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1910498111274455041', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="calca-7" href="https://hoobuy.cc/rE0ZqWYR" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Calça 7" src="img/cal%c3%a7as/cal%c3%a7a-balenciaga.png"/>
+<div class="product-name">Calça Balenciaga Multi-Pocket</div>
+<p class="price">¥165</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1888615529683456002', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="calca-8" href="https://hoobuy.cc/YRqGxWrE" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Calça 8" src="img/cal%c3%a7as/cal%c3%a7a-nikebaggy.png"/>
+<div class="product-name">Calça Nike Moletom Baggy<br/>(Preto e Cinza)</div>
+<p class="price">¥200</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1861142745000808449', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="calca-9" href="https://hoobuy.cc/LXyAOrgX" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Calça 8" src="img/cal%c3%a7as/cal%c3%a7a-s.png"/>
+<div class="product-name">Calça Supreme S Logo<br/></div>
+<p class="price">¥299</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://finds.ly/product/taobao/847634386771', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="calca-11" href="https://hoobuy.cc/bEmbyWG8" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Calça 8" src="img/cal%c3%a7as/cal%c3%a7a-denim2.png"/>
+<div class="product-name">Calça Dept Flare<br/>(Várias Cores)</div>
+<p class="price">¥168</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://finds.ly/product/taobao/868644477631', '_blank');">
+                        QC
+                    </div>
+</a>
+</div>
+</section><section id="bermuda">
+<h2><span class="section-icon">🩳</span> Bermuda</h2>
+<div class="product-grid">
+<a class="product-card" data-product-id="bermuda-1" href="https://hoobuy.cc/bELxgkVE" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Bermuda 1" src="img/bermuda/shorts-sup.png"/>
+<div class="product-name">Jorts Supreme Baggy</div>
+<p class="price">¥240</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1893741212030046210', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="bermuda-2" href="https://hoobuy.cc/vRxB5WvE" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Bermuda 2" src="img/bermuda/shorts-cinzabaggy.png"/>
+<div class="product-name">Bermuda Moletom Baggy Pepe</div>
+<p class="price">¥130</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1905962977762316289', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="bermuda-4" href="https://hoobuy.cc/0R74goxX" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Bermuda 4" src="img/bermuda/bermuda-essentials.png"/>
+<div class="product-name">Bermuda Essentials<br/>(Várias cores)</div>
+<p class="price">¥50</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1855520947018240002');">
+                        QC
+                    </div>
+                    </a>
+<a class="product-card" data-product-id="bermuda-4" href="https://hoobuy.cc/L8BKgBJR" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Bermuda 4" src="img/bermuda/shorts-corteiz.png"/>
+<div class="product-name">Bermuda Corteiz<br/>(Várias cores)</div>
+<p class="price">¥88</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1855520947018240002');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="bermuda-5" href="https://hoobuy.cc/A8aBZ1OR" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Bermuda 5" src="img/bermuda/shorts-jordan.png"/>
+<div class="product-name">Bermuda Jordan<br/>(Várias cores)</div>
+<p class="price">¥40</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1853614741517828099', '_blank');">
+                        QC
+                    </div>
+</a>
+<a class="product-card" data-product-id="bermuda-8" href="https://hoobuy.cc/j843wWPE" target="_blank">
+<button class="favorite-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleFavorite(this.parentElement);">
+<img src="img/favoritar.png" alt="Favoritos" style="height: 25px;">
+</button>
+<img alt="Bermuda 8" src="img/bermuda/shorts-rl.png"/>
+<div class="product-name">Shorts Ralph Lauren<br/>(Várias cores)</div>
+<p class="price">¥68</p>
+<div class="qc-pics" onclick="event.stopPropagation(); window.open('https://www.uufinds.com/goodItemDetail/qc/1854071282968625154', '_blank');">
+                        QC
+                    </div>
+</a>
+</div>
+        </main>
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2025 TweekImpoting. Todos os direitos reservados.</p>
+                <div class="social-links">
+<a href="https://www.tiktok.com/@tweekimporting?lang=pt-BR" target="_blank">
+  <img src="img/logottk.png" alt="TikTok" style="height: 35px;">
+</a>
+          <a href="https://hoobuy.com/?utm_source=website&utm_medium=ambassador&utm_campaign=linksharing&inviteCode=mXY4a9VR" target="_blank" class="cssbuy-link">
+            <img src="img/logo-css-branca.png" class="logo-cssbuy" 
+            onmouseover="this.src='img/logo-css-azul.png'" 
+            onmouseout="this.src='img/logo-css-branca.png'" 
+            alt="CSSBuy">
+          </a>               
+<a href="https://discord.gg/NDq7ncq55H" target="_blank">
+  <img src="img/discord-logo-0.png" alt="Discord" style="height: 48px;">
+</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+<div id="produtos-container"></div>
+<script src="script-produtos.js"></script>
+</body>
+<script src="js/script.js"></script>
+</html>
