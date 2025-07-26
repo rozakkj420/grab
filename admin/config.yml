@@ -1,9 +1,9 @@
 backend:
   name: git-gateway
-  branch: main
+  branch: main  # ou "master", dependendo do seu repositório
 
-media_folder: "img"
-public_folder: "/img"
+media_folder: "img/tenis"
+public_folder: "/img/tenis"
 
 collections:
   - name: "produtos"
@@ -12,9 +12,8 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Nome", name: "nome", widget: "string" }
-      - { label: "Variação", name: "variacao", widget: "string" }
-      - { label: "Preço", name: "preco", widget: "string" }
-      - { label: "Link do Produto", name: "link", widget: "string" }
-      - { label: "Imagem", name: "img", widget: "image" }
-      - { label: "Link QC", name: "qc", widget: "string" }
+      - { label: "Nome", name: "name", widget: "string" }
+      - { label: "Preço", name: "price", widget: "string" }
+      - { label: "Imagem", name: "image", widget: "image" }
+      - { label: "Link HooBuy", name: "link", widget: "string" }
+      - { label: "QC Link", name: "qcLink", widget: "string" }
