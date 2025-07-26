@@ -1,6 +1,7 @@
 backend:
-  name: git-gateway
-  branch: main  # ou "master", dependendo do seu repositório
+  name: github
+  repo: rozakkj420/grab
+  branch: main
 
 media_folder: "img/tenis"
 public_folder: "/img/tenis"
